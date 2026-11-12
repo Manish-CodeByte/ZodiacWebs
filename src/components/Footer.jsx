@@ -37,7 +37,7 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <GlowingZLogo size={40} />
+              <GlowingZLogo size={46} />
               <span className="text-2xl font-bold tracking-tight text-white">
                 Zodiac <span className="text-gradient-orange-gold">Webs</span>
               </span>

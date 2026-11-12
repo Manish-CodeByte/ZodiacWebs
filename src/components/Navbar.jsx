@@ -47,7 +47,7 @@ export default function Navbar() {
             className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6B00] rounded-lg min-h-[44px] min-w-[44px] py-1"
             aria-label="Zodiac Webs Home"
           >
-            <GlowingZLogo size={36} />
+            <GlowingZLogo size={42} />
             <span className="text-xl sm:text-2xl font-bold tracking-tight text-white group-hover:text-white transition-colors">
               Zodiac <span className="text-gradient-orange-gold">Webs</span>
             </span>

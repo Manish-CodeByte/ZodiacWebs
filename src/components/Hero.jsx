@@ -43,10 +43,19 @@ export default function Hero() {
           animate="visible"
           className="flex flex-col items-center"
         >
-          {/* Glowing Z Emblem in Hero */}
-          <motion.div variants={itemVariants} className="mb-6 flex justify-center">
+          {/* Glowing Official Zodiac Logo in Hero */}
+          <motion.div variants={itemVariants} className="mb-8 flex justify-center">
             <div className="relative group cursor-pointer">
-              <GlowingZLogo size={88} className="transform group-hover:scale-105 transition-transform duration-300" />
+              {/* Outer atmospheric aura */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#FF6B00] via-[#FFD700] to-[#FF6B00] opacity-40 blur-2xl group-hover:opacity-65 transition-opacity duration-500 scale-110" />
+              <GlowingZLogo
+                size={148}
+                className="sm:hidden drop-shadow-[0_0_35px_rgba(255,107,0,0.5)] transform group-hover:scale-105 transition-all duration-300"
+              />
+              <GlowingZLogo
+                size={184}
+                className="hidden sm:inline-flex drop-shadow-[0_0_45px_rgba(255,107,0,0.55)] transform group-hover:scale-105 transition-all duration-300"
+              />
             </div>
           </motion.div>
 
