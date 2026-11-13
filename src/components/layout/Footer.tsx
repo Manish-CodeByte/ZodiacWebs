@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUp, Instagram, ArrowRight, Sparkles } from 'lucide-react';
-import { siteConfig, getInstagramDmUrl } from '../../config/siteConfig';
+import { ArrowUp, Instagram, ArrowRight, MessageSquare, Mail, Sparkles } from 'lucide-react';
+import { siteConfig, getInstagramDmUrl, getWhatsAppUrl } from '../../config/siteConfig';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -42,17 +42,29 @@ export const Footer: React.FC = () => {
               </span>
             </p>
 
-            {/* Direct Instagram Contact Pill */}
-            <div className="pt-2">
+            {/* Direct Channel Action Buttons */}
+            <div className="pt-2 flex flex-wrap items-center gap-2">
               <a
                 href={getInstagramDmUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#141414] border border-[#FF7518]/40 text-white hover:border-[#FFAD33] hover:shadow-[0_0_20px_rgba(255,117,24,0.25)] transition-all text-xs font-bold uppercase tracking-wider group"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#141414] border border-[#FF7518]/40 text-white hover:border-[#FFAD33] transition-all text-xs font-bold uppercase tracking-wider group"
               >
-                <Instagram className="w-4 h-4 text-[#FF7518] group-hover:scale-110 transition-transform" />
-                <span>DM Us on Instagram: {siteConfig.contact.instagramHandle}</span>
+                <Instagram className="w-3.5 h-3.5 text-[#FF7518] group-hover:scale-110 transition-transform" />
+                <span>DM: {siteConfig.contact.instagramHandle}</span>
               </a>
+
+              {siteConfig.contact.whatsappNumber && (
+                <a
+                  href={getWhatsAppUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#141414] border border-emerald-500/40 text-white hover:border-emerald-400 transition-all text-xs font-bold uppercase tracking-wider"
+                >
+                  <MessageSquare className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>WhatsApp</span>
+                </a>
+              )}
             </div>
           </div>
 
@@ -88,7 +100,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link to="/services#cafe-restaurant" className="text-[#B0B0B0] hover:text-white transition-colors">
-                  Cafe & Restaurant Sites
+                  Café & Restaurant Sites
                 </Link>
               </li>
               <li>
@@ -114,18 +126,17 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Connect Directly - Instagram DM First */}
+          {/* Connect Directly */}
           <div>
             <h3 className="text-xs font-bold tracking-wider text-white uppercase mb-4 text-[#FFAD33]">
               Connect Directly
             </h3>
             <div className="space-y-3 text-sm">
-              {/* Instagram DM Highlight Card */}
               <a
                 href={getInstagramDmUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 rounded-2xl bg-[#141414] border border-[#2B2B2B] hover:border-[#FF7518]/60 hover:shadow-[0_0_20px_rgba(255,117,24,0.15)] transition-all group"
+                className="flex items-center gap-3 p-3 rounded-2xl bg-[#141414] border border-[#2B2B2B] hover:border-[#FF7518]/60 transition-all group"
               >
                 <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#FF7518] to-[#FFAD33] flex items-center justify-center text-black flex-shrink-0 shadow-md">
                   <Instagram className="w-5 h-5 stroke-[2.2]" />
@@ -140,37 +151,44 @@ export const Footer: React.FC = () => {
                 </div>
               </a>
 
-              {/* Inquiry Form Link */}
+              {siteConfig.contact.email && (
+                <a
+                  href={`mailto:${siteConfig.contact.email}`}
+                  className="flex items-center gap-2 text-xs text-[#B0B0B0] hover:text-[#FF7518] transition-colors pt-1"
+                >
+                  <Mail className="w-4 h-4 text-[#FF7518]" />
+                  <span className="truncate">{siteConfig.contact.email}</span>
+                </a>
+              )}
+
               <Link
                 to="/contact"
                 className="flex items-center justify-between p-3 rounded-2xl bg-[#111111] border border-[#222222] hover:border-white/20 text-xs text-[#B0B0B0] hover:text-white transition-all group"
               >
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-3.5 h-3.5 text-[#FF7518]" />
-                  <span>Send Project Inquiry</span>
+                  <span>Submit Project Form</span>
                 </div>
                 <ArrowRight className="w-3.5 h-3.5 text-[#FF7518] group-hover:translate-x-1 transition-transform" />
               </Link>
-
-              <p className="text-[11px] text-[#777777] pt-1">
-                ⚡ Fastest replies via Instagram DM. Reach out for projects, colabs & instant quotes.
-              </p>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Bottom Bar with Final Brand Statement: Built for Ambition. Engineered for Growth. */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8E8E8E]">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-col sm:flex-row items-center gap-2 text-center sm:text-left">
             <span>© {new Date().getFullYear()} Zodiac Webs. All rights reserved.</span>
-            <span>•</span>
-            <span className="text-[#FF7518] font-medium">{siteConfig.tagline}</span>
+            <span className="hidden sm:inline">•</span>
+            <span className="text-[#FF7518] font-semibold tracking-wider uppercase">
+              Built for Ambition. Engineered for Growth.
+            </span>
           </div>
 
           <div className="flex items-center gap-4">
             <button
               onClick={scrollToTop}
-              className="flex items-center gap-1.5 text-xs text-[#B0B0B0] hover:text-white transition-colors px-3 py-1.5 rounded-full bg-[#111111] border border-[#242424] hover:border-[#FF7518]/50"
+              className="flex items-center gap-1.5 text-xs text-[#B0B0B0] hover:text-white transition-colors px-3 py-1.5 rounded-full bg-[#111111] border border-[#242424] hover:border-[#FF7518]/50 focus:outline-none"
             >
               <span>Back to top</span>
               <ArrowUp className="w-3.5 h-3.5 text-[#FF7518]" />

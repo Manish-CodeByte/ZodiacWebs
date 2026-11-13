@@ -6,23 +6,23 @@ export const Process: React.FC = () => {
   const steps = [
     {
       step: '01',
-      title: 'Discovery & Blueprint',
-      description: 'We analyze your target market, competitors, and growth objectives to plan a high-conversion digital blueprint.'
+      title: 'Discover',
+      description: 'Understand the business, target audience, goals, and project requirements to create an actionable roadmap.'
     },
     {
       step: '02',
-      title: 'UI/UX Architecture',
-      description: 'Sleek dark-mode aesthetics, intuitive buyer journeys, and responsive wireframes built specifically for your audience.'
+      title: 'Design',
+      description: 'Develop user journeys, wireframes, and a refined visual identity tailored to your brand.'
     },
     {
       step: '03',
-      title: 'High-Speed Development',
-      description: 'Clean, modern code built with React, Vite, and Tailwind CSS. Thoroughly tested for speed, security, and responsiveness.'
+      title: 'Build',
+      description: 'Engineer responsive, accessible, high-performance web experiences with clean modern code.'
     },
     {
       step: '04',
-      title: 'Launch & Optimization',
-      description: 'Domain connection, SEO verification, analytics setup, and ongoing proactive maintenance for continuous growth.'
+      title: 'Launch & Optimize',
+      description: 'Test, deploy, refine, and prepare the website for continued search visibility and growth.'
     }
   ];
 
@@ -30,9 +30,9 @@ export const Process: React.FC = () => {
     <section className="py-24 bg-[#050505] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="How We Work"
-          title="From Concept To Launch in"
-          highlightText="4 Simple Steps"
+          badge="Agile Delivery"
+          title="From First Conversation to"
+          highlightText="Final Launch."
           description="A transparent, collaborative workflow engineered to eliminate delays and deliver a world-class website on schedule."
         />
 
@@ -43,10 +43,10 @@ export const Process: React.FC = () => {
           {steps.map((step, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.4, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -4 }}
               className="relative z-10 flex flex-col p-7 rounded-3xl bg-[#111111] border border-[#222222] hover:border-[#FF7518]/50 hover:shadow-[0_12px_30px_-10px_rgba(255,117,24,0.2)] transition-all group"
             >
@@ -57,7 +57,7 @@ export const Process: React.FC = () => {
                 <span className="w-2.5 h-2.5 rounded-full bg-[#FF7518] shadow-[0_0_8px_#FF7518]" />
               </div>
 
-              <h3 className="text-lg font-bold text-white group-hover:text-[#FFAD33] transition-colors mb-3">
+              <h3 className="text-lg font-bold text-white group-hover:text-[#FFAD33] transition-colors mb-3 font-display">
                 {step.title}
               </h3>
 

@@ -40,9 +40,9 @@ export const ServicesOverview: React.FC = () => {
     <section className="py-24 bg-[#050505] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Specialized Solutions"
-          title="Engineered For Your"
-          highlightText="Specific Industry"
+          badge="Specialized Capabilities"
+          title="Digital Solutions Built"
+          highlightText="Around Your Business."
           description="We do not believe in one-size-fits-all templates. Every project is built from the ground up to solve your unique business conversion challenges."
         />
 
@@ -50,10 +50,10 @@ export const ServicesOverview: React.FC = () => {
           {servicesData.map((service, idx) => (
             <motion.div
               key={service.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.4, delay: idx * 0.06, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -4 }}
               className="relative flex flex-col justify-between bg-[#111111] border border-[#222222] rounded-3xl p-7 hover:border-[#FF7518]/50 hover:shadow-[0_15px_35px_-10px_rgba(255,117,24,0.25)] transition-all duration-300 group"
             >
@@ -69,7 +69,7 @@ export const ServicesOverview: React.FC = () => {
                   )}
                 </div>
 
-                <h3 className="text-xl font-bold text-white group-hover:text-[#FFAD33] transition-colors mb-2">
+                <h3 className="text-xl font-bold text-white group-hover:text-[#FFAD33] transition-colors mb-2 font-display">
                   {service.title}
                 </h3>
 
@@ -77,7 +77,7 @@ export const ServicesOverview: React.FC = () => {
                   {service.shortDesc}
                 </p>
 
-                {/* Key feature pills */}
+                {/* Key practical capabilities */}
                 <div className="space-y-2 pt-2 border-t border-white/5 mb-6">
                   {service.features.slice(0, 3).map((feat, fIdx) => (
                     <div key={fIdx} className="flex items-center gap-2 text-xs text-[#D1D1D1]">
@@ -92,9 +92,9 @@ export const ServicesOverview: React.FC = () => {
               <div className="pt-4 border-t border-[#1C1C1C] flex items-center justify-between">
                 <Link
                   to={`/services#${service.id}`}
-                  className="text-xs font-semibold text-[#FFAD33] hover:text-[#FF7518] inline-flex items-center gap-1 group/link"
+                  className="text-xs font-bold text-[#FFAD33] hover:text-[#FF7518] inline-flex items-center gap-1 group/link"
                 >
-                  <span>Learn more</span>
+                  <span>Explore Service</span>
                   <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
                 </Link>
 
@@ -116,7 +116,7 @@ export const ServicesOverview: React.FC = () => {
               size="md"
               rightIcon={<ArrowRight className="w-4 h-4 text-[#FF7518]" />}
             >
-              Explore Full Capabilities & Pricing
+              View All Services
             </Button>
           </Link>
         </div>

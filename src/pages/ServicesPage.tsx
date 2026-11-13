@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { SectionHeader } from '../components/ui/SectionHeader';
 import { servicesData } from '../data/servicesData';
 import { ServiceCard } from '../components/services/ServiceCard';
+import { ProjectEstimator } from '../components/services/ProjectEstimator';
 import { faqData } from '../data/faqData';
 import { CtaBanner } from '../components/home/CtaBanner';
+import { SEO } from '../components/seo/SEO';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 
 export const ServicesPage: React.FC = () => {
@@ -15,15 +17,28 @@ export const ServicesPage: React.FC = () => {
 
   return (
     <div className="pt-28 pb-16 min-h-screen">
+      <SEO
+        title="Services — Web Design & Modern Development"
+        description="Explore our specialized digital solutions: Business Websites, Café & Restaurant Presences, E-Commerce Stores, Portfolios, and Ongoing Support."
+        canonical="/services"
+      />
+
       {/* Services Header */}
       <section className="py-16 sm:py-20 bg-radial-hero relative overflow-hidden">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <SectionHeader
             badge="Full Agency Capabilities"
-            title="Modern Web Design & Development"
-            highlightText="For Every Industry"
+            title="Everything You Need to Build a"
+            highlightText="Stronger Digital Presence"
             description="Explore our specialized services tailored to meet the exact conversion, branding, and technical needs of your business."
           />
+        </div>
+      </section>
+
+      {/* Interactive Project Estimator */}
+      <section className="py-12 bg-[#050505]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ProjectEstimator />
         </div>
       </section>
 
@@ -44,8 +59,8 @@ export const ServicesPage: React.FC = () => {
               <HelpCircle className="w-3.5 h-3.5 text-[#FF7518]" />
               Clear Answers
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
-              Frequently Asked <span className="text-[#FF7518]">Questions</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white font-display">
+              Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF7518] to-[#FFAD33]">Questions</span>
             </h2>
             <p className="mt-3 text-sm text-[#B0B0B0]">
               Everything you need to know about our workflow, technology stack, and guarantees.

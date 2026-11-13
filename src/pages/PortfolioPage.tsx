@@ -5,6 +5,7 @@ import { portfolioData } from '../data/portfolioData';
 import { ProjectItem } from '../types';
 import { ProjectModal } from '../components/portfolio/ProjectModal';
 import { CtaBanner } from '../components/home/CtaBanner';
+import { SEO } from '../components/seo/SEO';
 import { ExternalLink, Sparkles, Filter } from 'lucide-react';
 
 export const PortfolioPage: React.FC = () => {
@@ -14,7 +15,7 @@ export const PortfolioPage: React.FC = () => {
   const categories = [
     { id: 'all', label: 'All' },
     { id: 'business', label: 'Business' },
-    { id: 'restaurant', label: 'Café & Food' },
+    { id: 'restaurant', label: 'Cafe & Food' },
     { id: 'ecommerce', label: 'E-Commerce' },
     { id: 'portfolio', label: 'Portfolios' }
   ];
@@ -25,13 +26,19 @@ export const PortfolioPage: React.FC = () => {
 
   return (
     <div className="pt-28 pb-16 min-h-screen">
+      <SEO
+        title="Portfolio — Selected Work & Case Studies"
+        description="Explore our curated agency showcases, prototypes, and digital architectures built for diverse modern industries."
+        canonical="/portfolio"
+      />
+
       {/* Header */}
-      <section className="py-16 sm:py-20 bg-radial-hero relative overflow-hidden">
+      <section className="py-16 sm:py-24 bg-radial-hero relative overflow-hidden">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <SectionHeader
             badge="Selected Works & Case Studies"
-            title="Design Architecture &"
-            highlightText="Interactive Prototypes"
+            title="Selected Work. Thoughtful Design."
+            highlightText="Real Possibilities."
             description="Explore our curated agency showcases. In accordance with our integrity standards, all conceptual demos are explicitly labeled."
           />
         </div>
@@ -119,7 +126,7 @@ export const PortfolioPage: React.FC = () => {
                   {/* Content */}
                   <div className="p-6 flex-1 flex flex-col justify-between">
                     <div>
-                      <h3 className="text-xl font-bold text-white group-hover:text-[#FFAD33] transition-colors mb-2">
+                      <h3 className="text-xl font-bold text-white group-hover:text-[#FFAD33] transition-colors mb-2 font-display">
                         {project.title}
                       </h3>
                       <p className="text-sm text-[#B0B0B0] line-clamp-2 mb-4">

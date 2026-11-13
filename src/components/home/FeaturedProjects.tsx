@@ -18,8 +18,8 @@ export const FeaturedProjects: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Featured Work"
-          title="Recent Digital Creations &"
-          highlightText="Showcase Prototypes"
+          title="Ideas Brought"
+          highlightText="to Life."
           description="Explore our high-fidelity concepts and responsive architectures built for diverse modern industries."
         />
 
@@ -41,8 +41,8 @@ export const FeaturedProjects: React.FC = () => {
 
                 {/* Badge: Clearly labeled demo/concept as per instructions */}
                 <div className="absolute top-4 left-4">
-                  <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-md text-[#FFAD33] border border-[#FF7518]/40">
-                    {project.isDemo ? 'Concept Showcase' : 'Client Project'}
+                  <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-black/85 backdrop-blur-md text-[#FFAD33] border border-[#FF7518]/40">
+                    {project.isDemo ? 'Concept Showcase' : 'Live Build'}
                   </span>
                 </div>
 
@@ -56,7 +56,7 @@ export const FeaturedProjects: React.FC = () => {
               {/* Card Body */}
               <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-xl font-bold text-white group-hover:text-[#FFAD33] transition-colors mb-2">
+                  <h3 className="text-xl font-bold text-white group-hover:text-[#FFAD33] transition-colors mb-2 font-display">
                     {project.title}
                   </h3>
 
@@ -100,7 +100,7 @@ export const FeaturedProjects: React.FC = () => {
               size="md"
               rightIcon={<ArrowRight className="w-4 h-4 text-[#FF7518]" />}
             >
-              Explore Full Portfolio & Case Studies
+              Explore Our Portfolio
             </Button>
           </Link>
         </div>
