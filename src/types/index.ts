@@ -1,56 +1,28 @@
 export interface NavLink {
   name: string;
-  path: string;
+  href: string;
+}
+
+export interface ValueProp {
+  title: string;
+  description: string;
+  icon: string;
 }
 
 export interface ServiceItem {
   id: string;
   title: string;
-  slug: string;
-  shortDesc: string;
-  fullDesc: string;
-  features: string[];
-  benefits: string[];
-  idealFor: string;
-  startingFrom?: string;
+  description: string;
   icon: string;
-  badge?: string;
 }
 
-export interface ProjectItem {
-  id: string;
+export interface ProcessStep {
+  step: string;
   title: string;
-  slug: string;
-  category: 'business' | 'restaurant' | 'ecommerce' | 'portfolio';
-  categoryLabel: string;
-  shortDesc: string;
-  fullDesc: string;
-  heroImage: string;
-  tags: string[];
-  isDemo: boolean;
-  liveUrl?: string;
-  metrics: { label: string; value: string }[];
-  deliverables: string[];
-  challenge?: string;
-  solution?: string;
-  accentColor?: string;
+  description: string;
 }
 
-export interface TestimonialItem {
-  id: string;
-  quote: string;
-  author: string;
-  role: string;
-  company: string;
-  avatar?: string;
-  rating: number;
-}
-
-export interface ContactFormData {
-  fullName: string;
-  email: string;
-  phone: string;
-  service: string;
-  budget: string;
-  message: string;
+export interface WhyUsItem {
+  title: string;
+  description: string;
 }

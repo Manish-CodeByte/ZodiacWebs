@@ -33,7 +33,7 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Plus Jakarta Sans', 'Inter', 'sans-serif']
+        display: ['Outfit', 'sans-serif']
       },
       letterSpacing: {
         tightest: '-0.02em'

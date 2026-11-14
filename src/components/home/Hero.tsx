@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, ShieldCheck, Zap, Globe } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Sparkles, ArrowRight, Instagram, Zap, Globe } from 'lucide-react';
 import { siteConfig, getInstagramDmUrl } from '../../config/siteConfig';
-import { Button } from '../ui/Button';
 
 export const Hero: React.FC = () => {
   return (
@@ -18,67 +17,56 @@ export const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Eyebrow, Main Headline, Supporting Copy, Dual CTAs */}
-          <div className="lg:col-span-7 text-left space-y-6">
-            {/* Small Eyebrow */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-7 text-left space-y-6"
+          >
+            {/* Eyebrow */}
             <div className="flex items-center gap-2">
               <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase bg-[#141414] border border-[#FF7518]/40 text-[#FFAD33] shadow-[0_0_15px_rgba(255,117,24,0.2)]">
                 <Sparkles className="w-3.5 h-3.5 text-[#FF7518]" />
-                ZODIAC WEBS — WEB DESIGN & DEVELOPMENT
+                Website Design & Development
               </span>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold tracking-tightest text-white uppercase font-display leading-[1.08]">
-              Turn Visitors <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF7518] to-[#FFAD33] drop-shadow-[0_0_25px_rgba(255,117,24,0.35)]">
-                Into Customers.
+            {/* Main Headline: Gradient on ONE word only: "Customers" */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold tracking-tight text-white uppercase font-display leading-[1.08]">
+              Turn Visitors Into{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF7518] to-[#FFAD33] drop-shadow-[0_0_30px_rgba(255,117,24,0.4)]">
+                Customers
               </span>
             </h1>
 
-            {/* Supporting Paragraph & Brand Line */}
+            {/* Subtext: One sentence on fast, high-converting websites */}
             <div className="space-y-2 max-w-xl">
               <p className="text-base sm:text-lg md:text-xl text-[#B0B0B0] leading-relaxed">
-                We craft fast, modern, and conversion-focused websites that help ambitious brands stand out, build trust, and grow online.
+                We engineer lightning-fast, high-converting digital experiences that turn visitors into paying customers for cafés, restaurants, e-commerce, and ambitious businesses.
               </p>
               <p className="text-sm font-semibold tracking-wider text-[#FFAD33] uppercase">
                 {siteConfig.brandMessage}
               </p>
             </div>
 
-            {/* Dual CTAs + Instagram Action */}
+            {/* Dual CTAs: Primary -> Instagram DM, Ghost -> #portfolio */}
             <div className="pt-2 flex flex-wrap items-center gap-4">
-              <Link to="/contact">
-                <Button
-                  variant="primary"
-                  size="lg"
-                  rightIcon={<ArrowRight className="w-4 h-4" />}
-                >
-                  Let's Build Together
-                </Button>
-              </Link>
-
-              <Link to="/services">
-                <Button
-                  variant="ghost"
-                  size="lg"
-                  className="border border-[#2C2C2C] hover:border-[#FF7518]/50 text-white"
-                >
-                  Explore Our Services
-                </Button>
-              </Link>
-
               <a
                 href={getInstagramDmUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#FF7518] to-[#FFAD33] text-black font-extrabold text-sm uppercase tracking-wider shadow-[0_0_25px_rgba(255,117,24,0.4)] hover:shadow-[0_0_35px_rgba(255,173,51,0.6)] hover:brightness-105 transition-all active:scale-[0.98]"
               >
-                <Button
-                  variant="glow-pill"
-                  size="lg"
-                  className="text-xs uppercase tracking-wider text-[#FFAD33]"
-                >
-                  DM For Websites & Collabs
-                </Button>
+                <Instagram className="w-4 h-4 stroke-[2.2]" />
+                <span>Let's Build Together</span>
+              </a>
+
+              <a
+                href="#portfolio"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#111111] border border-[#2C2C2C] hover:border-[#FF7518]/50 text-white font-semibold text-sm hover:bg-white/5 transition-all"
+              >
+                <span>Explore Our Work</span>
+                <ArrowRight className="w-4 h-4 text-[#FF7518]" />
               </a>
             </div>
 
@@ -86,24 +74,27 @@ export const Hero: React.FC = () => {
             <div className="pt-4 border-t border-white/5 flex flex-wrap items-center gap-6 sm:gap-8 text-xs uppercase tracking-wider text-[#8E8E8E]">
               <span className="text-white font-medium">Custom-built · Mobile-first · Designed for growth</span>
               <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#FF7518]" />
-                <span>Zero Bloat Engineering</span>
+                <span className="w-2 h-2 rounded-full bg-[#FF7518]" />
+                <span>Direct Instagram DM Consultation</span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Right Column: Premium Multi-Device Mockup Composition */}
+          {/* Right Column: Premium Multi-Device Mockup Composition with Gentle Float */}
           <div className="lg:col-span-5 relative flex items-center justify-center">
-            {/* Mockup Canvas */}
-            <div className="relative w-full max-w-lg">
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ repeat: Infinity, duration: 4.5, ease: 'easeInOut' }}
+              className="relative w-full max-w-lg"
+            >
               {/* Floating Feature Indicators */}
               <div className="absolute -top-4 -left-4 z-20 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#161616]/90 border border-[#FF7518]/40 shadow-lg text-[11px] font-bold text-white backdrop-blur-md">
                 <Zap className="w-3.5 h-3.5 text-[#FF7518]" />
                 <span>Sub-Second Paint</span>
               </div>
 
-              <div className="absolute top-1/2 -right-4 z-20 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#161616]/90 border border-emerald-500/40 shadow-lg text-[11px] font-bold text-white backdrop-blur-md">
-                <Globe className="w-3.5 h-3.5 text-emerald-400" />
+              <div className="absolute top-1/2 -right-4 z-20 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#161616]/90 border border-[#FFAD33]/40 shadow-lg text-[11px] font-bold text-white backdrop-blur-md">
+                <Globe className="w-3.5 h-3.5 text-[#FFAD33]" />
                 <span>Mobile Responsive</span>
               </div>
 
@@ -188,7 +179,7 @@ export const Hero: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
